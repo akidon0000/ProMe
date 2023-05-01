@@ -11,6 +11,16 @@
 		1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1BD28429FF4B9800268715 /* Chat.storyboard */; };
 		1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28729FF4FF400268715 /* R.generated.swift */; };
 		1A1BD28A29FF50D600268715 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28929FF50D600268715 /* ChatViewModel.swift */; };
+		1A1BD28C29FF51DA00268715 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28B29FF51DA00268715 /* ApiManager.swift */; };
+		1A1BD29B29FF52AB00268715 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29229FF52AB00268715 /* Date.swift */; };
+		1A1BD29C29FF52AB00268715 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29329FF52AB00268715 /* UIView.swift */; };
+		1A1BD29D29FF52AB00268715 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29429FF52AB00268715 /* UIColor.swift */; };
+		1A1BD29E29FF52AB00268715 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29529FF52AB00268715 /* String.swift */; };
+		1A1BD29F29FF52AB00268715 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29629FF52AB00268715 /* UIImage.swift */; };
+		1A1BD2A029FF52AB00268715 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29729FF52AB00268715 /* DateFormatter.swift */; };
+		1A1BD2A129FF52AB00268715 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29829FF52AB00268715 /* UIImageView.swift */; };
+		1A1BD2A229FF52AB00268715 /* UIViewController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29929FF52AB00268715 /* UIViewController+StatusBar.swift */; };
+		1A1BD2A329FF52AB00268715 /* AKLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29A29FF52AB00268715 /* AKLibrary.swift */; };
 		1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */; };
 		1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */; };
 		1A75DB3B29FF43AC007C0C68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3A29FF43AC007C0C68 /* ViewController.swift */; };
@@ -25,6 +35,16 @@
 		1A1BD28429FF4B9800268715 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		1A1BD28729FF4FF400268715 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		1A1BD28929FF50D600268715 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		1A1BD28B29FF51DA00268715 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		1A1BD29229FF52AB00268715 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		1A1BD29329FF52AB00268715 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		1A1BD29429FF52AB00268715 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		1A1BD29529FF52AB00268715 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		1A1BD29629FF52AB00268715 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		1A1BD29729FF52AB00268715 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		1A1BD29829FF52AB00268715 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		1A1BD29929FF52AB00268715 /* UIViewController+StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBar.swift"; sourceTree = "<group>"; };
+		1A1BD29A29FF52AB00268715 /* AKLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKLibrary.swift; sourceTree = "<group>"; };
 		1A75DB3329FF43AC007C0C68 /* ProMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +73,7 @@
 		1A1BD27B29FF474500268715 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				1A1BD27D29FF475A00268715 /* AKLibrary */,
+				1A1BD29029FF52AB00268715 /* AKLibrary */,
 				1A1BD27C29FF475200268715 /* Model */,
 				1A1BD27F29FF476F00268715 /* etc */,
 				1A1BD27E29FF476800268715 /* View */,
@@ -64,15 +84,9 @@
 		1A1BD27C29FF475200268715 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1A1BD28B29FF51DA00268715 /* ApiManager.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		1A1BD27D29FF475A00268715 /* AKLibrary */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AKLibrary;
 			sourceTree = "<group>";
 		};
 		1A1BD27E29FF476800268715 /* View */ = {
@@ -112,6 +126,30 @@
 				1A1BD28429FF4B9800268715 /* Chat.storyboard */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		1A1BD29029FF52AB00268715 /* AKLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				1A1BD29129FF52AB00268715 /* Extension */,
+				1A1BD29A29FF52AB00268715 /* AKLibrary.swift */,
+			);
+			path = AKLibrary;
+			sourceTree = "<group>";
+		};
+		1A1BD29129FF52AB00268715 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1A1BD29229FF52AB00268715 /* Date.swift */,
+				1A1BD29329FF52AB00268715 /* UIView.swift */,
+				1A1BD29429FF52AB00268715 /* UIColor.swift */,
+				1A1BD29529FF52AB00268715 /* String.swift */,
+				1A1BD29629FF52AB00268715 /* UIImage.swift */,
+				1A1BD29729FF52AB00268715 /* DateFormatter.swift */,
+				1A1BD29829FF52AB00268715 /* UIImageView.swift */,
+				1A1BD29929FF52AB00268715 /* UIViewController+StatusBar.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		1A75DB2A29FF43AC007C0C68 = {
@@ -297,11 +335,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A75DB3B29FF43AC007C0C68 /* ViewController.swift in Sources */,
+				1A1BD2A229FF52AB00268715 /* UIViewController+StatusBar.swift in Sources */,
+				1A1BD29E29FF52AB00268715 /* String.swift in Sources */,
+				1A1BD2A129FF52AB00268715 /* UIImageView.swift in Sources */,
 				1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */,
 				1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */,
+				1A1BD2A029FF52AB00268715 /* DateFormatter.swift in Sources */,
+				1A1BD29B29FF52AB00268715 /* Date.swift in Sources */,
+				1A1BD28C29FF51DA00268715 /* ApiManager.swift in Sources */,
 				1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */,
 				1A1BD28A29FF50D600268715 /* ChatViewModel.swift in Sources */,
+				1A1BD2A329FF52AB00268715 /* AKLibrary.swift in Sources */,
+				1A1BD29C29FF52AB00268715 /* UIView.swift in Sources */,
+				1A1BD29F29FF52AB00268715 /* UIImage.swift in Sources */,
 				1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */,
+				1A1BD29D29FF52AB00268715 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
