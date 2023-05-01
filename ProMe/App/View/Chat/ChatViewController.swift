@@ -9,6 +9,9 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
+    @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
