@@ -10,11 +10,13 @@ import UIKit
 class ChatViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
-    
     @IBOutlet weak var textField: UITextField!
+    
+    private let viewModel = ChatViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
-        // Do any additional setup after loading the view.
     }
 }
