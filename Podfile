@@ -6,5 +6,8 @@ target 'ProMe' do
   use_frameworks!
 
   # Pods for ProMe
+  pod 'R.swift' , '~> 7.2'
+  pod 'Alamofire', '~> 4' # いずれAlamofire 5系へ
+  pod 'SwiftyJSON', '~> 5'
 
 end

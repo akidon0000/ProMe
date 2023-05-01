@@ -13,6 +13,7 @@
 		1A75DB3E29FF43AC007C0C68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A75DB3C29FF43AC007C0C68 /* Main.storyboard */; };
 		1A75DB4029FF43AE007C0C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A75DB3F29FF43AE007C0C68 /* Assets.xcassets */; };
 		1A75DB4329FF43AE007C0C68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A75DB4129FF43AE007C0C68 /* LaunchScreen.storyboard */; };
+		7B5F179B69C5FC0C78A58952 /* Pods_ProMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97885B8D3694C5D2F1AB0107 /* Pods_ProMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		1A75DB3F29FF43AE007C0C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A75DB4229FF43AE007C0C68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A75DB4429FF43AE007C0C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F2960D0508E21AF2AE64AE2 /* Pods-ProMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProMe.debug.xcconfig"; path = "Target Support Files/Pods-ProMe/Pods-ProMe.debug.xcconfig"; sourceTree = "<group>"; };
+		97885B8D3694C5D2F1AB0107 /* Pods_ProMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B972CC468D9330E2E03C996 /* Pods-ProMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProMe.release.xcconfig"; path = "Target Support Files/Pods-ProMe/Pods-ProMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5F179B69C5FC0C78A58952 /* Pods_ProMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				1A75DB3529FF43AC007C0C68 /* ProMe */,
 				1A75DB3429FF43AC007C0C68 /* Products */,
+				E26DFA31844F0BF0DA35A715 /* Pods */,
+				CCA5002721AE26B9CF93677A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = ProMe;
 			sourceTree = "<group>";
 		};
+		CCA5002721AE26B9CF93677A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97885B8D3694C5D2F1AB0107 /* Pods_ProMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E26DFA31844F0BF0DA35A715 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F2960D0508E21AF2AE64AE2 /* Pods-ProMe.debug.xcconfig */,
+				9B972CC468D9330E2E03C996 /* Pods-ProMe.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A75DB4729FF43AE007C0C68 /* Build configuration list for PBXNativeTarget "ProMe" */;
 			buildPhases = (
+				EDCDD073C9805D457F169575 /* [CP] Check Pods Manifest.lock */,
 				1A75DB2F29FF43AC007C0C68 /* Sources */,
 				1A75DB3029FF43AC007C0C68 /* Frameworks */,
 				1A75DB3129FF43AC007C0C68 /* Resources */,
+				C18454324FA102D9E67DD872 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C18454324FA102D9E67DD872 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProMe/Pods-ProMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProMe/Pods-ProMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProMe/Pods-ProMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDCDD073C9805D457F169575 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A75DB2F29FF43AC007C0C68 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		1A75DB4829FF43AE007C0C68 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F2960D0508E21AF2AE64AE2 /* Pods-ProMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		1A75DB4929FF43AE007C0C68 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B972CC468D9330E2E03C996 /* Pods-ProMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
