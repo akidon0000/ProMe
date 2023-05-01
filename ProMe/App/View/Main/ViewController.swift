@@ -15,5 +15,7 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func startButton(_ sender: Any) {
+    }
 }
 
