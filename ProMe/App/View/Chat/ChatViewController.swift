@@ -17,6 +17,13 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
+    }
+    
+    @IBAction func startButton(_ sender: Any) {
+        viewModel.askChatGPT(text: textField.text!)
+    }
+    @IBAction func changeButton(_ sender: Any) {
+        textView.text = viewModel.messages.description
     }
 }

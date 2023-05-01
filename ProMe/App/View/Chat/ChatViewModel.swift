@@ -10,11 +10,31 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+struct Message: Hashable {
+    var content: String
+    var role: Role
+
+    enum Role: String {
+        case system = "system"
+        case user = "user"
+        case assistant = "assistant"
+    }
+}
+
 class ChatViewModel {
-    
-    // API マネージャ
-    public let apiManager = ApiManager.singleton
-    
+
+    private let token = ""
+
+    private let setting: Message? = Message(
+        content: "あなたは、素人質問ですがという前置きで学部生や大学院生に恐れられている大学の教授です。",
+        role: .system
+    )
+
+    @Published public var messages: [Message] = []
+    @Published public var isAsking: Bool = false
+    @Published public var errorText: String = ""
+    @Published public var showAlert = false
+
     //MARK: - STATE ステータス
     enum State {
         case busy  // 準備中
@@ -22,34 +42,71 @@ class ChatViewModel {
         case error // エラー発生
     }
     public var state: ((State) -> Void)?
-    
-    public func getPRItems() {
-        state?(.busy) // 通信開始（通信中）
-        
-        let urlStr = "https://tokudai0000.github.io/tokumemo_resource/pr_image/info.json"
 
-        apiManager.request(urlStr,
-                           success: { [weak self] (response) in
+    public func askChatGPT(text: String) {
+        if text.isEmpty { return }
+        isAsking = true
+        add(text: text, role: .user)
+        send(text: text)
+    }
 
-            guard let self = self else { // HomeViewModelのself
-                AKLog(level: .FATAL, message: "[self] FatalError")
-                fatalError()
+    private func responseSuccess(data: ChatGPTResponse) {
+        guard let message = data.choices.first?.message else { return }
+        add(text: message.content, role: .assistant)
+        isAsking = false
+    }
+
+    private func responseFailure(error: String) {
+        errorText = error
+        showAlert = true
+        isAsking = false
+    }
+
+    private func add(text: String, role: Message.Role) {
+        messages.append(.init(content: text, role: role))
+    }
+}
+
+
+extension ChatViewModel {
+    private func send(text: String) {
+        let headers: HTTPHeaders = [
+            "Content-type": "application/json",
+            "Authorization":"Bearer \(token)"
+        ]
+
+        var messages = convertToMessages(text: text)
+        if setting != nil {
+            messages.insert(["content":setting!.content, "role":setting!.role.rawValue], at: 0)
+        }
+        let parameters: [String: Any] = [
+            "model": "gpt-3.5-turbo",
+            "messages": messages,
+        ]
+
+        AF.request(
+            "https://api.openai.com/v1/chat/completions",
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default,
+            headers: headers
+        ).responseData(completionHandler: { response in
+            switch response.result {
+            case .success(let data):
+                guard let res = try? JSONDecoder().decode(ChatGPTResponse.self, from: data) else {
+                    self.responseFailure(error: "Decode error")
+                    return
+                }
+                self.responseSuccess(data: res)
+                break
+            case .failure(let error):
+                self.responseFailure(error: error.localizedDescription)
+                break
             }
-            let itemCounts = response["itemCounts"].int ?? 0
-
-            for i in 0 ..< itemCounts {
-                let item = response["items"][i]
-//                let prItem = PublicRelations(imageURL: item["imageURL"].string,
-//                                           introduction: item["introduction"].string,
-//                                           tappedURL: item["tappedURL"].string,
-//                                           organization_name: item["organization_name"].string,
-//                                           description: item["description"].string)
-//                self.prItems.append(prItem)
-            }
-            self.state?(.ready) // 通信完了
-
-        }, failure: { [weak self] (error) in
-            self?.state?(.error) // エラー表示
         })
+    }
+
+    private func convertToMessages(text: String) -> [[String: String]] {
+        return messages.map { ["content": $0.content, "role": $0.role.rawValue] }
     }
 }
