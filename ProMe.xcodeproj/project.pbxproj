@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28229FF4B7900268715 /* ChatViewController.swift */; };
+		1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1BD28429FF4B9800268715 /* Chat.storyboard */; };
 		1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */; };
 		1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */; };
 		1A75DB3B29FF43AC007C0C68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3A29FF43AC007C0C68 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A1BD28229FF4B7900268715 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1A1BD28429FF4B9800268715 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		1A75DB3329FF43AC007C0C68 /* ProMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 				1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */,
 				1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */,
 				1A1BD28029FF479F00268715 /* Main */,
+				1A1BD28129FF4B4E00268715 /* Chat */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +98,15 @@
 				1A75DB3C29FF43AC007C0C68 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		1A1BD28129FF4B4E00268715 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1A1BD28229FF4B7900268715 /* ChatViewController.swift */,
+				1A1BD28429FF4B9800268715 /* Chat.storyboard */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		1A75DB2A29FF43AC007C0C68 = {
@@ -201,6 +215,7 @@
 			files = (
 				1A75DB4329FF43AE007C0C68 /* LaunchScreen.storyboard in Resources */,
 				1A75DB4029FF43AE007C0C68 /* Assets.xcassets in Resources */,
+				1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */,
 				1A75DB3E29FF43AC007C0C68 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +271,7 @@
 			files = (
 				1A75DB3B29FF43AC007C0C68 /* ViewController.swift in Sources */,
 				1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */,
+				1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */,
 				1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
