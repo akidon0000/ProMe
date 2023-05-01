@@ -10,6 +10,7 @@
 		1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28229FF4B7900268715 /* ChatViewController.swift */; };
 		1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1BD28429FF4B9800268715 /* Chat.storyboard */; };
 		1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28729FF4FF400268715 /* R.generated.swift */; };
+		1A1BD28A29FF50D600268715 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28929FF50D600268715 /* ChatViewModel.swift */; };
 		1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */; };
 		1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */; };
 		1A75DB3B29FF43AC007C0C68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3A29FF43AC007C0C68 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		1A1BD28229FF4B7900268715 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1A1BD28429FF4B9800268715 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		1A1BD28729FF4FF400268715 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		1A1BD28929FF50D600268715 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		1A75DB3329FF43AC007C0C68 /* ProMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		1A1BD28129FF4B4E00268715 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				1A1BD28929FF50D600268715 /* ChatViewModel.swift */,
 				1A1BD28229FF4B7900268715 /* ChatViewController.swift */,
 				1A1BD28429FF4B9800268715 /* Chat.storyboard */,
 			);
@@ -297,6 +300,7 @@
 				1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */,
 				1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */,
 				1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */,
+				1A1BD28A29FF50D600268715 /* ChatViewModel.swift in Sources */,
 				1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
