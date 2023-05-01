@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 
 
     @IBAction func startButton(_ sender: Any) {
+        let vc = R.storyboard.chat.chatViewController()!
+        present(vc, animated: true, completion: nil)
     }
 }
 

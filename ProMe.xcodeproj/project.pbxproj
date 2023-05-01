@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28229FF4B7900268715 /* ChatViewController.swift */; };
 		1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1BD28429FF4B9800268715 /* Chat.storyboard */; };
+		1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28729FF4FF400268715 /* R.generated.swift */; };
 		1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */; };
 		1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */; };
 		1A75DB3B29FF43AC007C0C68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3A29FF43AC007C0C68 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		1A1BD28229FF4B7900268715 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1A1BD28429FF4B9800268715 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		1A1BD28729FF4FF400268715 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		1A75DB3329FF43AC007C0C68 /* ProMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		1A75DB2A29FF43AC007C0C68 = {
 			isa = PBXGroup;
 			children = (
+				1A1BD28729FF4FF400268715 /* R.generated.swift */,
 				1A75DB3529FF43AC007C0C68 /* ProMe */,
 				1A75DB3429FF43AC007C0C68 /* Products */,
 				E26DFA31844F0BF0DA35A715 /* Pods */,
@@ -161,6 +164,7 @@
 			buildConfigurationList = 1A75DB4729FF43AE007C0C68 /* Build configuration list for PBXNativeTarget "ProMe" */;
 			buildPhases = (
 				EDCDD073C9805D457F169575 /* [CP] Check Pods Manifest.lock */,
+				1A1BD28629FF4F1C00268715 /* Run Script R.Swift */,
 				1A75DB2F29FF43AC007C0C68 /* Sources */,
 				1A75DB3029FF43AC007C0C68 /* Frameworks */,
 				1A75DB3129FF43AC007C0C68 /* Resources */,
@@ -223,6 +227,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1A1BD28629FF4F1C00268715 /* Run Script R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "Run Script R.Swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		C18454324FA102D9E67DD872 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +295,7 @@
 			files = (
 				1A75DB3B29FF43AC007C0C68 /* ViewController.swift in Sources */,
 				1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */,
+				1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */,
 				1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */,
 				1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */,
 			);
