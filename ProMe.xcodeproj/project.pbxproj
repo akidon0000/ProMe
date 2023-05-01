@@ -42,6 +42,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1BD27B29FF474500268715 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1A1BD27D29FF475A00268715 /* AKLibrary */,
+				1A1BD27C29FF475200268715 /* Model */,
+				1A1BD27F29FF476F00268715 /* etc */,
+				1A1BD27E29FF476800268715 /* View */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1A1BD27C29FF475200268715 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1A1BD27D29FF475A00268715 /* AKLibrary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AKLibrary;
+			sourceTree = "<group>";
+		};
+		1A1BD27E29FF476800268715 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */,
+				1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */,
+				1A1BD28029FF479F00268715 /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1A1BD27F29FF476F00268715 /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				1A75DB3F29FF43AE007C0C68 /* Assets.xcassets */,
+				1A75DB4129FF43AE007C0C68 /* LaunchScreen.storyboard */,
+			);
+			path = etc;
+			sourceTree = "<group>";
+		};
+		1A1BD28029FF479F00268715 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1A75DB3A29FF43AC007C0C68 /* ViewController.swift */,
+				1A75DB3C29FF43AC007C0C68 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		1A75DB2A29FF43AC007C0C68 = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +116,7 @@
 		1A75DB3529FF43AC007C0C68 /* ProMe */ = {
 			isa = PBXGroup;
 			children = (
-				1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */,
-				1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */,
-				1A75DB3A29FF43AC007C0C68 /* ViewController.swift */,
-				1A75DB3C29FF43AC007C0C68 /* Main.storyboard */,
-				1A75DB3F29FF43AE007C0C68 /* Assets.xcassets */,
-				1A75DB4129FF43AE007C0C68 /* LaunchScreen.storyboard */,
+				1A1BD27B29FF474500268715 /* App */,
 				1A75DB4429FF43AE007C0C68 /* Info.plist */,
 			);
 			path = ProMe;
@@ -88,7 +136,6 @@
 				4F2960D0508E21AF2AE64AE2 /* Pods-ProMe.debug.xcconfig */,
 				9B972CC468D9330E2E03C996 /* Pods-ProMe.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
