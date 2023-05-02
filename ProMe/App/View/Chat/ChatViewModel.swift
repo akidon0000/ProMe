@@ -24,6 +24,7 @@ struct Message: Hashable {
 class ChatViewModel {
 
     private let token = ""
+    public var checkGPTConnectivity: (() -> Void)?
 
     private let setting: Message? = Message(
         content: "あなたは、素人質問ですがという前置きで学部生や大学院生に恐れられている大学の教授です。",
@@ -34,14 +35,6 @@ class ChatViewModel {
     @Published public var isAsking: Bool = false
     @Published public var errorText: String = ""
     @Published public var showAlert = false
-
-    //MARK: - STATE ステータス
-    enum State {
-        case busy  // 準備中
-        case ready // 準備完了
-        case error // エラー発生
-    }
-    public var state: ((State) -> Void)?
 
     public func askChatGPT(text: String) {
         if text.isEmpty { return }
@@ -64,6 +57,7 @@ class ChatViewModel {
 
     private func add(text: String, role: Message.Role) {
         messages.append(.init(content: text, role: role))
+        checkGPTConnectivity?()
     }
 }
 

@@ -17,7 +17,20 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // Protocol： ViewModelが変化したことの通知を受けて画面を更新する
+        self.viewModel.checkGPTConnectivity = { [weak self] () in
+            guard let self = self else { fatalError() }
+            DispatchQueue.main.async {
+                self.textView.text = ""
+                for message in self.viewModel.messages {
+                    if message.role == .user {
+                        self.textView.text += "User: " + message.content + "\n"
+                    }else{
+                        self.textView.text += "System: " + message.content + "\n"
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func startButton(_ sender: Any) {
