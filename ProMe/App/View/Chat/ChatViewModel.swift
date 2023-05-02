@@ -25,6 +25,7 @@ class ChatViewModel {
 
     private let token = ""
     public var checkGPTConnectivity: (() -> Void)?
+    private let dataManager = DataManager.singleton
 
     private let setting: Message? = Message(
         content: "あなたは、素人質問ですがという前置きで学部生や大学院生に恐れられている大学の教授です。",
@@ -46,6 +47,19 @@ class ChatViewModel {
     private func responseSuccess(data: ChatGPTResponse) {
         guard let message = data.choices.first?.message else { return }
         add(text: message.content, role: .assistant)
+        
+        dataManager.chatMessages.removeAll()
+        for message in messages {
+            if message.role == .user {
+                let str = MockMessage.createMessage(text: message.content, user: .me)
+                dataManager.chatMessages.append(str)
+            }else{
+                let str = MockMessage.createMessage(text: message.content, user: .you)
+                dataManager.chatMessages.append(str)
+            }
+        }
+        
+        checkGPTConnectivity?()
         isAsking = false
     }
 
@@ -57,7 +71,6 @@ class ChatViewModel {
 
     private func add(text: String, role: Message.Role) {
         messages.append(.init(content: text, role: role))
-        checkGPTConnectivity?()
     }
 }
 

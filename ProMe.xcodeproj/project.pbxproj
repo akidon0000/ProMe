@@ -21,6 +21,9 @@
 		1A1BD2A229FF52AB00268715 /* UIViewController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29929FF52AB00268715 /* UIViewController+StatusBar.swift */; };
 		1A1BD2A329FF52AB00268715 /* AKLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29A29FF52AB00268715 /* AKLibrary.swift */; };
 		1A1BD2A829FF5E2700268715 /* ChatGPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD2A729FF5E2700268715 /* ChatGPTResponse.swift */; };
+		1A1BD2AA2A00E80400268715 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD2A92A00E80400268715 /* Entity.swift */; };
+		1A1BD2AC2A00E9C200268715 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD2AB2A00E9C200268715 /* Mock.swift */; };
+		1A1BD2AE2A00F80C00268715 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD2AD2A00F80C00268715 /* DataManager.swift */; };
 		1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */; };
 		1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */; };
 		1A75DB3B29FF43AC007C0C68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75DB3A29FF43AC007C0C68 /* ViewController.swift */; };
@@ -45,6 +48,9 @@
 		1A1BD29929FF52AB00268715 /* UIViewController+StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBar.swift"; sourceTree = "<group>"; };
 		1A1BD29A29FF52AB00268715 /* AKLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKLibrary.swift; sourceTree = "<group>"; };
 		1A1BD2A729FF5E2700268715 /* ChatGPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTResponse.swift; sourceTree = "<group>"; };
+		1A1BD2A92A00E80400268715 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		1A1BD2AB2A00E9C200268715 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		1A1BD2AD2A00F80C00268715 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1A75DB3329FF43AC007C0C68 /* ProMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A75DB3629FF43AC007C0C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A75DB3829FF43AC007C0C68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				1A1BD2A729FF5E2700268715 /* ChatGPTResponse.swift */,
+				1A1BD2A92A00E80400268715 /* Entity.swift */,
+				1A1BD2AD2A00F80C00268715 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 				1A1BD28929FF50D600268715 /* ChatViewModel.swift */,
 				1A1BD28229FF4B7900268715 /* ChatViewController.swift */,
 				1A1BD28429FF4B9800268715 /* Chat.storyboard */,
+				1A1BD2AB2A00E9C200268715 /* Mock.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -341,15 +350,18 @@
 				1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */,
 				1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */,
 				1A1BD2A029FF52AB00268715 /* DateFormatter.swift in Sources */,
+				1A1BD2AA2A00E80400268715 /* Entity.swift in Sources */,
 				1A1BD29B29FF52AB00268715 /* Date.swift in Sources */,
 				1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */,
 				1A1BD28A29FF50D600268715 /* ChatViewModel.swift in Sources */,
 				1A1BD2A829FF5E2700268715 /* ChatGPTResponse.swift in Sources */,
 				1A1BD2A329FF52AB00268715 /* AKLibrary.swift in Sources */,
 				1A1BD29C29FF52AB00268715 /* UIView.swift in Sources */,
+				1A1BD2AE2A00F80C00268715 /* DataManager.swift in Sources */,
 				1A1BD29F29FF52AB00268715 /* UIImage.swift in Sources */,
 				1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */,
 				1A1BD29D29FF52AB00268715 /* UIColor.swift in Sources */,
+				1A1BD2AC2A00E9C200268715 /* Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

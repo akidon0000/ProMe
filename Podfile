@@ -9,5 +9,6 @@ target 'ProMe' do
   pod 'R.swift' , '~> 7.2'
   pod 'Alamofire', '~> 5' # いずれAlamofire 5系へ
   pod 'SwiftyJSON', '~> 5'
+  pod 'MessageKit'
 
 end
