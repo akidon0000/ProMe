@@ -23,7 +23,16 @@ class ChatViewController: UIViewController {
     @IBAction func startButton(_ sender: Any) {
         viewModel.askChatGPT(text: textField.text!)
     }
+    
     @IBAction func changeButton(_ sender: Any) {
-        textView.text = viewModel.messages.description
+
+        for message in viewModel.messages {
+            if message.role == .user {
+                textView.text += "User: " + message.content + "\n"
+            }else{
+                textView.text += "System: " + message.content + "\n"
+            }
+        }
+        
     }
 }
