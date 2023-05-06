@@ -37,6 +37,7 @@
 		1A775D1D2A05FE80006B06C9 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A775D1B2A05FE80006B06C9 /* TitleTableViewCell.xib */; };
 		1A775D1F2A060427006B06C9 /* MainTableViewCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A775D1E2A060427006B06C9 /* MainTableViewCellContent.swift */; };
 		1A775D212A06056E006B06C9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A775D202A06056E006B06C9 /* MainViewModel.swift */; };
+		1A775D242A06348A006B06C9 /* key.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A775D232A06348A006B06C9 /* key.plist */; };
 		7B5F179B69C5FC0C78A58952 /* Pods_ProMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97885B8D3694C5D2F1AB0107 /* Pods_ProMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		1A775D1B2A05FE80006B06C9 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		1A775D1E2A060427006B06C9 /* MainTableViewCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCellContent.swift; sourceTree = "<group>"; };
 		1A775D202A06056E006B06C9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1A775D232A06348A006B06C9 /* key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = key.plist; sourceTree = "<group>"; };
 		4F2960D0508E21AF2AE64AE2 /* Pods-ProMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProMe.debug.xcconfig"; path = "Target Support Files/Pods-ProMe/Pods-ProMe.debug.xcconfig"; sourceTree = "<group>"; };
 		97885B8D3694C5D2F1AB0107 /* Pods_ProMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B972CC468D9330E2E03C996 /* Pods-ProMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProMe.release.xcconfig"; path = "Target Support Files/Pods-ProMe/Pods-ProMe.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				1A775D222A06341E006B06C9 /* prompt */,
 				1A75DB3F29FF43AE007C0C68 /* Assets.xcassets */,
 				1A75DB4129FF43AE007C0C68 /* LaunchScreen.storyboard */,
+				1A775D232A06348A006B06C9 /* key.plist */,
 			);
 			path = etc;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				1A1BD2B12A0140C200268715 /* prompt-self-promotion.txt in Resources */,
 				1A75DB4029FF43AE007C0C68 /* Assets.xcassets in Resources */,
 				1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */,
+				1A775D242A06348A006B06C9 /* key.plist in Resources */,
 				1A775D1D2A05FE80006B06C9 /* TitleTableViewCell.xib in Resources */,
 				1A775D182A05FC31006B06C9 /* InputTableViewCell.xib in Resources */,
 				1A75DB3E29FF43AC007C0C68 /* Main.storyboard in Resources */,

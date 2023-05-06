@@ -23,7 +23,6 @@ struct Message: Hashable {
 
 class ChatViewModel {
 
-    private let token = ""
     public var checkGPTConnectivity: (() -> Void)?
     private let dataManager = DataManager.singleton
 
@@ -79,6 +78,7 @@ class ChatViewModel {
 
 extension ChatViewModel {
     private func send(text: String) {
+        let token = loadPlist(path: "key", key: "GPT-API-Token")
         let headers: HTTPHeaders = [
             "Content-type": "application/json",
             "Authorization":"Bearer \(token)"
@@ -116,8 +116,22 @@ extension ChatViewModel {
             }
         })
     }
-
+    
+    // MARK: - Private func
+    
     private func convertToMessages(text: String) -> [[String: String]] {
         return messages.map { ["content": $0.content, "role": $0.role.rawValue] }
+    }
+    
+    /// plistを読み込み
+    private func loadPlist(path: String, key: String) -> String{
+        let filePath = Bundle.main.path(forResource: path, ofType:"plist")
+        let plist = NSDictionary(contentsOfFile: filePath!)
+
+        guard let pl = plist else{
+            AKLog(level: .ERROR, message: "plistが存在しません")
+            return ""
+        }
+        return pl[key] as! String
     }
 }
