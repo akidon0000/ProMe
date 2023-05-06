@@ -28,7 +28,7 @@ class ChatViewModel {
     private let dataManager = DataManager.singleton
 
     private let setting: Message? = Message(
-        content: "あなたは、素人質問ですがという前置きで学部生や大学院生に恐れられている大学の教授です。",
+        content: "",
         role: .system
     )
 

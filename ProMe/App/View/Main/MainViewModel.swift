@@ -10,17 +10,11 @@ import Foundation
 
 class MainViewModel {
     
-    let mainTableViewCellContents:[[MainTableViewCellContent]] = [[
-        MainTableViewCellContent(type: .title, title: "PROMOTE ME !!", placeHolderText: nil)],
-                                                                  [
+    let mainTableViewCellContents:[MainTableViewCellContent] = [
         MainTableViewCellContent(type: .input, title: "自己PRにしたい出来事", placeHolderText: nil),
         MainTableViewCellContent(type: .input, title: "出来事に対して困ったこと", placeHolderText: nil),
         MainTableViewCellContent(type: .input, title: "解決方法", placeHolderText: nil),
-        MainTableViewCellContent(type: .input, title: "何を学んだか", placeHolderText: nil),
-                                                                  ],[
-        MainTableViewCellContent(type: .button, title: "自己PR　作成", placeHolderText: nil),
-                                                                  ]
-    ]
+        MainTableViewCellContent(type: .input, title: "何を学んだか", placeHolderText: nil)]
     
     
 }
