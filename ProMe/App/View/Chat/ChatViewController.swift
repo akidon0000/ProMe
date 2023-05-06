@@ -10,40 +10,13 @@ import MessageKit
 import InputBarAccessoryView
 
 class ChatViewController: MessagesViewController {
-
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var textField: UITextField!
     
+    private let dataManager = DataManager.singleton
     private let viewModel = ChatViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Protocol： ViewModelが変化したことの通知を受けて画面を更新する
-        self.viewModel.checkGPTConnectivity = { [weak self] () in
-            guard let self = self else { fatalError() }
-            DispatchQueue.main.async {
-                // モックデータを取得
-                self.messageList = MockMessage.getMessages()
-            }
-//            DispatchQueue.main.async {
-//                self.textView.text = ""
-//                for message in self.viewModel.messages {
-//                    if message.role == .user {
-//                        self.textView.text += "User: " + message.content + "\n"
-//                    }else{
-//                        self.textView.text += "System: " + message.content + "\n"
-//                    }
-//                }
-//            }
-        }
-        
-        DispatchQueue.main.async {
-            // モックデータを取得
-            self.messageList = MockMessage.getMessages()
-        }
-
-
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -58,24 +31,23 @@ class ChatViewController: MessagesViewController {
         // メッセージ入力時に一番下までスクロール
         scrollsToLastItemOnKeyboardBeginsEditing = true
         maintainPositionOnKeyboardFrameChanged = true
-    }
-    
-    @IBAction func startButton(_ sender: Any) {
-        viewModel.askChatGPT(text: textField.text!)
-    }
-    
-    @IBAction func changeButton(_ sender: Any) {
-
-        for message in viewModel.messages {
-            if message.role == .user {
-                textView.text += "User: " + message.content + "\n"
-            }else{
-                textView.text += "System: " + message.content + "\n"
+        
+        // Protocol： ViewModelが変化したことの通知を受けて画面を更新する
+        self.viewModel.checkGPTConnectivity = { [weak self] () in
+            guard let self = self else { fatalError() }
+            DispatchQueue.main.async {
+                // モックデータを取得
+                self.messageList = MockMessage.getMessages()
             }
         }
         
+        guard let fileURL = Bundle.main.url(forResource: "prompt1", withExtension: "txt"),
+              let fileContents = try? String(contentsOf: fileURL, encoding: .utf8) else {
+                  fatalError("読み込み出来ません")
+              }
+//        dataManager.chatMessages.append(MockMessage.createMessage(text: fileContents, user: .me))
+        viewModel.askChatGPT(text: fileContents)
     }
-
 
     var messageList: [MockMessage] = [] {
         didSet {
@@ -100,11 +72,12 @@ class ChatViewController: MessagesViewController {
 
     private func setupInput(){
         // プレースホルダーの指定
-        messageInputBar.inputTextView.placeholder = "入力"
+        messageInputBar.inputTextView.placeholder = "Aa"
         // 入力欄のカーソルの色を指定
-        messageInputBar.inputTextView.tintColor = .red
+        messageInputBar.inputTextView.tintColor = .blue
         // 入力欄の色を指定
-        messageInputBar.inputTextView.backgroundColor = .white
+        messageInputBar.inputTextView.backgroundColor = .systemGray6
+        messageInputBar.inputTextView.cornerRound = 15.0
     }
 
     private func setupButton(){

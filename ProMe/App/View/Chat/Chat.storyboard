@@ -16,56 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Wp-uj-BKv">
-                                <rect key="frame" x="5" y="634" width="383" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7H5-cD-Kwg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7H5-cD-Kwg">
                                 <rect key="frame" x="10" y="69" width="373" height="555"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIC-Cw-Qkx">
-                                <rect key="frame" x="159" y="698" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="startButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7gd-gy-G9M"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-8O-4dd">
-                                <rect key="frame" x="34" y="698" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="changeButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Kdu-eQ-z2m"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EIC-Cw-Qkx" firstAttribute="leading" secondItem="8Sl-8O-4dd" secondAttribute="trailing" constant="50" id="BwF-f3-QvM"/>
-                            <constraint firstItem="0Wp-uj-BKv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="JKP-2F-AZd"/>
-                            <constraint firstItem="0Wp-uj-BKv" firstAttribute="top" secondItem="7H5-cD-Kwg" secondAttribute="bottom" constant="10" id="LeJ-3h-Q3N"/>
                             <constraint firstItem="7H5-cD-Kwg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="PT2-R3-rb7"/>
-                            <constraint firstItem="0Wp-uj-BKv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="TW6-Qm-x5P"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0Wp-uj-BKv" secondAttribute="bottom" constant="150" id="hfY-Zn-YjQ"/>
-                            <constraint firstItem="EIC-Cw-Qkx" firstAttribute="top" secondItem="0Wp-uj-BKv" secondAttribute="bottom" constant="30" id="hoi-9D-iuD"/>
-                            <constraint firstItem="8Sl-8O-4dd" firstAttribute="top" secondItem="0Wp-uj-BKv" secondAttribute="bottom" constant="30" id="iSC-nq-mVM"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0Wp-uj-BKv" secondAttribute="trailing" constant="5" id="o0v-qx-9dp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7H5-cD-Kwg" secondAttribute="trailing" constant="10" id="sPa-Gc-rcj"/>
-                            <constraint firstItem="EIC-Cw-Qkx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="uhv-cl-wZ0"/>
                             <constraint firstItem="7H5-cD-Kwg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="x4M-cK-rm3"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="textField" destination="0Wp-uj-BKv" id="z1K-hJ-QUI"/>
-                        <outlet property="textView" destination="7H5-cD-Kwg" id="rLI-bZ-DrW"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
