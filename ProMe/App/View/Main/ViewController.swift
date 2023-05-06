@@ -43,7 +43,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch viewModel.mainTableViewCellContents[Int(indexPath.section)][Int(indexPath.row)].type {
         case .title: return 44
-        case .input: return 300
+        case .input: return 100
         case .button: return 50
         }
     }
@@ -66,5 +66,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return titleCell
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = viewModel.mainTableViewCellContents[Int(indexPath.section)][Int(indexPath.row)]
+        switch item.type {
+        case .title: return
+            
+        case .input: return
+            
+        case .button:
+            let inputCell = tableView.dequeueReusableCell(withIdentifier: "InputTableViewCell", for: indexPath ) as! InputTableViewCell
+            print(inputCell.textView.text)
+            
+        }
     }
 }
