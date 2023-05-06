@@ -41,7 +41,7 @@ class ChatViewController: MessagesViewController {
             }
         }
         
-        guard let fileURL = Bundle.main.url(forResource: "prompt1", withExtension: "txt"),
+        guard let fileURL = Bundle.main.url(forResource: "prompt-self-promotion", withExtension: "txt"),
               let fileContents = try? String(contentsOf: fileURL, encoding: .utf8) else {
                   fatalError("読み込み出来ません")
               }
