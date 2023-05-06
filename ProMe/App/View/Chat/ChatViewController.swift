@@ -45,8 +45,9 @@ class ChatViewController: MessagesViewController {
               let fileContents = try? String(contentsOf: fileURL, encoding: .utf8) else {
                   fatalError("読み込み出来ません")
               }
+        let prompt = fileContents + dataManager.getMyInfo()
 //        dataManager.chatMessages.append(MockMessage.createMessage(text: fileContents, user: .me))
-        viewModel.askChatGPT(text: fileContents)
+        viewModel.askChatGPT(text: prompt)
     }
 
     var messageList: [MockMessage] = [] {

@@ -52,7 +52,9 @@ class ChatViewModel {
         for message in messages {
             if message.role == .user {
                 let str = MockMessage.createMessage(text: message.content, user: .me)
-                dataManager.chatMessages.append(str)
+//                if dataManager.chatMessages.count != 0 {
+                    dataManager.chatMessages.append(str)
+//                }
             }else{
                 let str = MockMessage.createMessage(text: message.content, user: .you)
                 dataManager.chatMessages.append(str)
@@ -90,14 +92,16 @@ extension ChatViewModel {
             "model": "gpt-3.5-turbo",
             "messages": messages,
         ]
+        
+        let url = "https://api.openai.com/v1/chat/completions"
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.timeoutInterval = 100 // タイムアウト時間を10秒に設定
+        request.allHTTPHeaderFields = headers.dictionary
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
 
-        AF.request(
-            "https://api.openai.com/v1/chat/completions",
-            method: .post,
-            parameters: parameters,
-            encoding: JSONEncoding.default,
-            headers: headers
-        ).responseData(completionHandler: { response in
+
+        AF.request(request).responseData(completionHandler: { response in
             switch response.result {
             case .success(let data):
                 guard let res = try? JSONDecoder().decode(ChatGPTResponse.self, from: data) else {

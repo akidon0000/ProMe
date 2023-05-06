@@ -12,6 +12,7 @@ class InputTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
+    let dataManager = DataManager.singleton
     var ID:String!
     
     func setupCell(title: String) {
@@ -25,7 +26,6 @@ class InputTableViewCell: UITableViewCell {
 extension InputTableViewCell: UITextViewDelegate {
     // 打ち込まれた内容を常に保存する
     func textViewDidChange(_ textView: UITextView) {
-        print(ID)
-        print(textView.text)
+        dataManager.myInfos[ID] = textView.text
     }
 }

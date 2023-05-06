@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var situationButton: UIButton!
     @IBOutlet weak var aiModelButton: UIButton!
     
+    private let dataManager = DataManager.singleton
     private let viewModel = MainViewModel()
     
     enum SituationType: String {
@@ -42,7 +43,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
 //        tableView.estimatedRowHeight = 100
     }
-
+    
+    @IBAction func startButton(_ sender: Any) {
+        dataManager.chatMessages
+        
+        let vc = R.storyboard.chat.chatViewController()!
+        present(vc, animated: true, completion: nil)
+    }
+    
     private func configureSituationMenuButton() {
         var actions = [UIMenuElement]()
         actions.append(UIAction(title: SituationType.selfPromote.rawValue, image: nil, state: self.situationMenuType == SituationType.selfPromote ? .on : .off,
