@@ -9,12 +9,17 @@
 import Foundation
 
 class MainViewModel {
+        
+    let contentsSelfPromotion: [SituationType:[String]] = [
+        .selfPromote:
+            ["自己PRにしたい出来事",
+             "出来事に対して困ったこと",
+             "解決方法",
+             "何を学んだか"],
+        
+            .extracurricularActivities:["test"]]
     
-    let mainTableViewCellContents:[MainTableViewCellContent] = [
-        MainTableViewCellContent(type: .input, title: "自己PRにしたい出来事", placeHolderText: nil),
-        MainTableViewCellContent(type: .input, title: "出来事に対して困ったこと", placeHolderText: nil),
-        MainTableViewCellContent(type: .input, title: "解決方法", placeHolderText: nil),
-        MainTableViewCellContent(type: .input, title: "何を学んだか", placeHolderText: nil)]
+    
     
     
 }

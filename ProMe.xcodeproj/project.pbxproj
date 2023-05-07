@@ -131,11 +131,11 @@
 		1A1BD28029FF479F00268715 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				1A775D142A05FC04006B06C9 /* Input */,
-				1A75DB3A29FF43AC007C0C68 /* ViewController.swift */,
 				1A775D202A06056E006B06C9 /* MainViewModel.swift */,
+				1A75DB3A29FF43AC007C0C68 /* ViewController.swift */,
 				1A75DB3C29FF43AC007C0C68 /* Main.storyboard */,
 				1A775D1E2A060427006B06C9 /* MainTableViewCellContent.swift */,
+				1A775D142A05FC04006B06C9 /* Input */,
 			);
 			path = Main;
 			sourceTree = "<group>";

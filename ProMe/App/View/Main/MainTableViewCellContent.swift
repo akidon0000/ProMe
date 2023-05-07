@@ -7,15 +7,7 @@
 
 import Foundation
 
-enum CellType {
-    case title
-    case input
-    case button
-}
-
-struct MainTableViewCellContent {
-    let type: CellType
-    let title: String?
-    let placeHolderText: String?
-}
+//struct MainTableViewCellContent {
+//    let title: String
+//}
 

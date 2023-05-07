@@ -57,7 +57,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // セクション内のセルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.mainTableViewCellContents.count
+        return viewModel.contentsSelfPromotion[self.situationMenuType]!.count
     }
     
     // セルの高さ
@@ -68,7 +68,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     // セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let inputCell = tableView.dequeueReusableCell(withIdentifier: "InputTableViewCell", for: indexPath ) as! InputTableViewCell
-        inputCell.setupCell(title: viewModel.mainTableViewCellContents[Int(indexPath.row)].title!)
+        inputCell.setupCell(title: viewModel.contentsSelfPromotion[self.situationMenuType]![Int(indexPath.row)])
         return inputCell
     }
     
@@ -100,6 +100,8 @@ extension ViewController {
         situationButton.showsMenuAsPrimaryAction = true
         // ボタンの表示を変更
         situationButton.setTitle(self.situationMenuType.rawValue, for: .normal)
+        
+        tableView.reloadData()
     }
     
     private func configureAiModelMenuButton() {
