@@ -11,6 +11,7 @@
 		1A1A4E082A07747C003A343B /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A4E072A07747C003A343B /* History.storyboard */; };
 		1A1A4E0C2A07766E003A343B /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A4E0A2A07766E003A343B /* HistoryTableViewCell.swift */; };
 		1A1A4E0D2A07766E003A343B /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A4E0B2A07766E003A343B /* HistoryTableViewCell.xib */; };
+		1A1A4E0F2A07975A003A343B /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A4E0E2A07975A003A343B /* Dictionary.swift */; };
 		1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28229FF4B7900268715 /* ChatViewController.swift */; };
 		1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1BD28429FF4B9800268715 /* Chat.storyboard */; };
 		1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28729FF4FF400268715 /* R.generated.swift */; };
@@ -47,6 +48,7 @@
 		1A1A4E072A07747C003A343B /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		1A1A4E0A2A07766E003A343B /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		1A1A4E0B2A07766E003A343B /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		1A1A4E0E2A07975A003A343B /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		1A1BD28229FF4B7900268715 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1A1BD28429FF4B9800268715 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		1A1BD28729FF4FF400268715 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				1A1BD29729FF52AB00268715 /* DateFormatter.swift */,
 				1A1BD29829FF52AB00268715 /* UIImageView.swift */,
 				1A1BD29929FF52AB00268715 /* UIViewController+StatusBar.swift */,
+				1A1A4E0E2A07975A003A343B /* Dictionary.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				1A1BD2A829FF5E2700268715 /* ChatGPTResponse.swift in Sources */,
 				1A1BD2A329FF52AB00268715 /* AKLibrary.swift in Sources */,
 				1A1BD29C29FF52AB00268715 /* UIView.swift in Sources */,
+				1A1A4E0F2A07975A003A343B /* Dictionary.swift in Sources */,
 				1A1BD2AE2A00F80C00268715 /* DataManager.swift in Sources */,
 				1A1BD29F29FF52AB00268715 /* UIImage.swift in Sources */,
 				1A75DB3929FF43AC007C0C68 /* SceneDelegate.swift in Sources */,

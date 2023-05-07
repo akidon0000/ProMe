@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum SituationType: String {
+enum SituationType: String, Codable {
     case selfPromote = "自己PR"
     case extracurricularActivities = "ガクチカ"
 }
@@ -43,6 +43,17 @@ class ViewController: UIViewController {
     
     // 文章作成開始
     @IBAction func startButton(_ sender: Any) {
+        var lists:[String] = []
+        for i in 0..<dataManager.textGenerationUserInfo.count {
+            lists.append(dataManager.textGenerationUserInfo.value(at: i) ?? "xx")
+        }
+        let saveMessage = DataManager.SaveMessage(situationType: self.situationMenuType,
+                                                  messages: lists)
+        if dataManager.saveMessages == nil {
+            dataManager.saveMessages = [saveMessage]
+        }else{
+            dataManager.saveMessages!.append(saveMessage)
+        }
         let vc = R.storyboard.chat.chatViewController()!
         present(vc, animated: true, completion: nil)
     }

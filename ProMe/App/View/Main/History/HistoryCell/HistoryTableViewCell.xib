@@ -17,19 +17,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023/03/30 12:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCh-67-5DF">
-                        <rect key="frame" x="0.0" y="59" width="138" height="21"/>
+                        <rect key="frame" x="5" y="59" width="138" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自己PR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnr-gR-oxP">
-                        <rect key="frame" x="148" y="59" width="56" height="21"/>
+                        <rect key="frame" x="153" y="59" width="56" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DpG-Tt-Kfx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                        <rect key="frame" x="5" y="0.0" width="310" height="59"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="トクメモ＋を開発した経験" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1h-Pd-tW4">
                                 <rect key="frame" x="0.0" y="19" width="208" height="21"/>
@@ -45,11 +45,11 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="DpG-Tt-Kfx" secondAttribute="trailing" id="6Jy-4t-c8J"/>
+                    <constraint firstAttribute="trailing" secondItem="DpG-Tt-Kfx" secondAttribute="trailing" constant="5" id="6Jy-4t-c8J"/>
                     <constraint firstItem="Nnr-gR-oxP" firstAttribute="top" secondItem="DpG-Tt-Kfx" secondAttribute="bottom" id="73w-8W-LAD"/>
-                    <constraint firstItem="UCh-67-5DF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EFs-pw-ccC"/>
+                    <constraint firstItem="UCh-67-5DF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="EFs-pw-ccC"/>
                     <constraint firstAttribute="bottom" secondItem="Nnr-gR-oxP" secondAttribute="bottom" id="RgE-th-QJO"/>
-                    <constraint firstItem="DpG-Tt-Kfx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZWV-eA-d6W"/>
+                    <constraint firstItem="DpG-Tt-Kfx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="ZWV-eA-d6W"/>
                     <constraint firstItem="Nnr-gR-oxP" firstAttribute="leading" secondItem="UCh-67-5DF" secondAttribute="trailing" constant="10" id="dSf-Jy-44q"/>
                     <constraint firstItem="DpG-Tt-Kfx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gfy-8f-Pde"/>
                     <constraint firstAttribute="bottom" secondItem="UCh-67-5DF" secondAttribute="bottom" id="vnT-p7-ZhT"/>

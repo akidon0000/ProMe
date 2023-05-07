@@ -13,12 +13,13 @@ final class DataManager {
     private var userDefaults = UserDefaults.standard
     
     // Main画面で記入したユーザーの内容[質問内容：ユーザーの回答]
-    public var textGenerationUserInfo:[String:String] = [:]
+    
+    public var textGenerationUserInfo = OrderedDictionary<String, String>()
     
     public func fetchUserInfo() -> String {
         var text = ""
-        for item in textGenerationUserInfo {
-            text += item.value + "。 "
+        for i in 0 ..< textGenerationUserInfo.count {
+            text += textGenerationUserInfo.value(at: i) ?? "" + "。 "
         }
         return text
     }
@@ -26,17 +27,24 @@ final class DataManager {
     // GPTに送信する用
     public var messagesForGPT: [MockMessage] = []
     
-    private let KEY_messagesHistory = "KEY_messagesHistory"
-    // メッセージの会話履歴を保存する
-    public var messagesHistory: [UUID:[MockMessage]]{
-        get{ return self.messagesHistory }
-        set(v){ userDefaults.set(v ,forKey: KEY_messagesHistory) }
+    struct SaveMessage: Codable {
+        let situationType: SituationType
+        let messages: [String]
     }
-    
-//    private let KEY_messagesTypeHistory = "KEY_messagesTypeHistory"
-    // メッセージの会話タイプ履歴を保存する
-//    public var messagesTypeHistory: [UUID:]{
-//        get{ return self.messagesTypeHistory }
-//        set(v){ userDefaults.set(v ,forKey: KEY_messagesTypeHistory) }
-//    }
+    private let KEY_saveMessages = "KEY_saveMessages"
+    public var saveMessages: [SaveMessage]? {
+        get{
+            let jsonDecoder = JSONDecoder()
+            let data = userDefaults.data(forKey: KEY_saveMessages) ?? Data()
+            guard let lists = try? jsonDecoder.decode([SaveMessage].self, from: data) else{
+                return nil
+            }
+            return lists
+            
+        }
+        set(v){
+            let jsonEncoder = JSONEncoder()
+            guard let data = try? jsonEncoder.encode(v!) else { return }
+            userDefaults.set(data ,forKey: KEY_saveMessages)}
+    }
 }
