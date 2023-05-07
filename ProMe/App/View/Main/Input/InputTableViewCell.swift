@@ -15,10 +15,11 @@ class InputTableViewCell: UITableViewCell {
     let dataManager = DataManager.singleton
     var ID:String!
     
-    func setupCell(title: String) {
+    func setupCell(title: String, contents: String) {
         textView.delegate = self
         ID = title
         titleLabel.text = title
+        textView.text = contents
     }
     
 }

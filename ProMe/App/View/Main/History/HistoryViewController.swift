@@ -11,6 +11,8 @@ class HistoryViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    public var delegate = ViewController()
+    
     private let dataManager = DataManager.singleton
     
     override func viewDidLoad() {
@@ -52,4 +54,14 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
         return inputCell
     }
     
+    /// セルがタップされた時
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let item = dataManager.saveMessages?[indexPath.row] {
+            dismiss(animated: true, completion: {
+                self.delegate.situationMenuType = item.situationType
+                self.delegate.messages = item.messages
+                self.delegate.tableView.reloadData()
+            })
+        }
+    }
 }

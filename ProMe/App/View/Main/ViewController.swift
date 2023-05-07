@@ -26,8 +26,10 @@ class ViewController: UIViewController {
     private let dataManager = DataManager.singleton
     private let viewModel = MainViewModel()
     
-    private var situationMenuType = SituationType.selfPromote
+    public var situationMenuType = SituationType.selfPromote
     private var aiModelMenuType = AiModelType.threePointFiveTurbo
+    
+    var messages:[String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +47,10 @@ class ViewController: UIViewController {
     @IBAction func startButton(_ sender: Any) {
         var lists:[String] = []
         for i in 0..<dataManager.textGenerationUserInfo.count {
+            
             lists.append(dataManager.textGenerationUserInfo.value(at: i) ?? "xx")
         }
+        
         let dt = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.setTemplate(.full)
@@ -66,6 +70,7 @@ class ViewController: UIViewController {
     
     @IBAction func historyButton(_ sender: Any) {
         let vc = R.storyboard.history.historyViewController()!
+        vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
     
@@ -92,7 +97,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     // セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let inputCell = tableView.dequeueReusableCell(withIdentifier: "InputTableViewCell", for: indexPath ) as! InputTableViewCell
-        inputCell.setupCell(title: viewModel.contentsSelfPromotion[self.situationMenuType]![Int(indexPath.row)])
+        guard let message = messages?[Int(indexPath.row)] {
+            
+        }
+        let txt = messages
+        inputCell.setupCell(title: viewModel.contentsSelfPromotion[self.situationMenuType]![Int(indexPath.row)],
+                            contents: messages?[Int(indexPath.row)] ?? "")
         return inputCell
     }
     
