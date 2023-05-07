@@ -47,8 +47,14 @@ class ViewController: UIViewController {
         for i in 0..<dataManager.textGenerationUserInfo.count {
             lists.append(dataManager.textGenerationUserInfo.value(at: i) ?? "xx")
         }
+        let dt = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.setTemplate(.full)
+        print(dateFormatter.string(from: dt))
+        
         let saveMessage = DataManager.SaveMessage(situationType: self.situationMenuType,
-                                                  messages: lists)
+                                                  messages: lists,
+                                                  date: dateFormatter.string(from: dt))
         if dataManager.saveMessages == nil {
             dataManager.saveMessages = [saveMessage]
         }else{

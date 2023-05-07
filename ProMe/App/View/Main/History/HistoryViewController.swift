@@ -46,8 +46,8 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     // セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let inputCell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath ) as! HistoryTableViewCell
-        if let item = dataManager.saveMessages?[indexPath.row].messages {
-            inputCell.setupCell(contents: item[0], date: "bbb", type: "ccc")
+        if let item = dataManager.saveMessages?[indexPath.row] {
+            inputCell.setupCell(contents: item.messages[0], date: item.date, type: item.situationType.rawValue)
         }
         return inputCell
     }

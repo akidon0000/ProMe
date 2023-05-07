@@ -30,6 +30,7 @@ final class DataManager {
     struct SaveMessage: Codable {
         let situationType: SituationType
         let messages: [String]
+        let date: String
     }
     private let KEY_saveMessages = "KEY_saveMessages"
     public var saveMessages: [SaveMessage]? {
