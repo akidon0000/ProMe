@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HistoryTableViewCell" customModule="ProMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023/03/30 12:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCh-67-5DF">
+                        <rect key="frame" x="0.0" y="59" width="138" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自己PR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnr-gR-oxP">
+                        <rect key="frame" x="148" y="59" width="56" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DpG-Tt-Kfx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="トクメモ＋を開発した経験" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1h-Pd-tW4">
+                                <rect key="frame" x="0.0" y="19" width="208" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="L1h-Pd-tW4" firstAttribute="centerY" secondItem="DpG-Tt-Kfx" secondAttribute="centerY" id="gW2-8M-h1y"/>
+                            <constraint firstItem="L1h-Pd-tW4" firstAttribute="leading" secondItem="DpG-Tt-Kfx" secondAttribute="leading" id="nWb-dS-8tA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="DpG-Tt-Kfx" secondAttribute="trailing" id="6Jy-4t-c8J"/>
+                    <constraint firstItem="Nnr-gR-oxP" firstAttribute="top" secondItem="DpG-Tt-Kfx" secondAttribute="bottom" id="73w-8W-LAD"/>
+                    <constraint firstItem="UCh-67-5DF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EFs-pw-ccC"/>
+                    <constraint firstAttribute="bottom" secondItem="Nnr-gR-oxP" secondAttribute="bottom" id="RgE-th-QJO"/>
+                    <constraint firstItem="DpG-Tt-Kfx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZWV-eA-d6W"/>
+                    <constraint firstItem="Nnr-gR-oxP" firstAttribute="leading" secondItem="UCh-67-5DF" secondAttribute="trailing" constant="10" id="dSf-Jy-44q"/>
+                    <constraint firstItem="DpG-Tt-Kfx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gfy-8f-Pde"/>
+                    <constraint firstAttribute="bottom" secondItem="UCh-67-5DF" secondAttribute="bottom" id="vnT-p7-ZhT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentsLabel" destination="L1h-Pd-tW4" id="XRS-gK-qzy"/>
+                <outlet property="dateLabel" destination="UCh-67-5DF" id="GiM-wg-PBL"/>
+                <outlet property="typeLabel" destination="Nnr-gR-oxP" id="xUX-1F-SXK"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
+        </tableViewCell>
+    </objects>
+</document>

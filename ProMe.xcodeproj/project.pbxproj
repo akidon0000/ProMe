@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1A1A4E062A07746E003A343B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A4E052A07746E003A343B /* HistoryViewController.swift */; };
 		1A1A4E082A07747C003A343B /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A4E072A07747C003A343B /* History.storyboard */; };
+		1A1A4E0C2A07766E003A343B /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A4E0A2A07766E003A343B /* HistoryTableViewCell.swift */; };
+		1A1A4E0D2A07766E003A343B /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A4E0B2A07766E003A343B /* HistoryTableViewCell.xib */; };
 		1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28229FF4B7900268715 /* ChatViewController.swift */; };
 		1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1BD28429FF4B9800268715 /* Chat.storyboard */; };
 		1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD28729FF4FF400268715 /* R.generated.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		1A1A4E052A07746E003A343B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		1A1A4E072A07747C003A343B /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		1A1A4E0A2A07766E003A343B /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		1A1A4E0B2A07766E003A343B /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		1A1BD28229FF4B7900268715 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1A1BD28429FF4B9800268715 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		1A1BD28729FF4FF400268715 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -93,10 +97,20 @@
 		1A1A4E042A077439003A343B /* History */ = {
 			isa = PBXGroup;
 			children = (
+				1A1A4E092A077628003A343B /* HistoryCell */,
 				1A1A4E052A07746E003A343B /* HistoryViewController.swift */,
 				1A1A4E072A07747C003A343B /* History.storyboard */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		1A1A4E092A077628003A343B /* HistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A4E0A2A07766E003A343B /* HistoryTableViewCell.swift */,
+				1A1A4E0B2A07766E003A343B /* HistoryTableViewCell.xib */,
+			);
+			path = HistoryCell;
 			sourceTree = "<group>";
 		};
 		1A1BD27B29FF474500268715 /* App */ = {
@@ -319,6 +333,7 @@
 				1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */,
 				1A775D242A06348A006B06C9 /* key.plist in Resources */,
 				1A775D182A05FC31006B06C9 /* InputTableViewCell.xib in Resources */,
+				1A1A4E0D2A07766E003A343B /* HistoryTableViewCell.xib in Resources */,
 				1A75DB3E29FF43AC007C0C68 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +415,7 @@
 				1A1A4E062A07746E003A343B /* HistoryViewController.swift in Sources */,
 				1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */,
 				1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */,
+				1A1A4E0C2A07766E003A343B /* HistoryTableViewCell.swift in Sources */,
 				1A1BD2A029FF52AB00268715 /* DateFormatter.swift in Sources */,
 				1A1BD29B29FF52AB00268715 /* Date.swift in Sources */,
 				1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */,

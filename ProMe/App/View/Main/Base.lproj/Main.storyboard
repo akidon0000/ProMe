@@ -61,15 +61,13 @@
                                         </menu>
                                         <state key="normal" title="AIモデル"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fT-ND-MbK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ki-jO-B89">
                                         <rect key="frame" x="262" y="0.0" width="131" height="44"/>
-                                        <menu key="menu" id="BVz-tv-EwJ">
-                                            <children>
-                                                <command title="Item 1" id="9BM-aw-oMg"/>
-                                                <command title="Item 2" id="oRf-Dx-tBr"/>
-                                            </children>
-                                        </menu>
                                         <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="履歴"/>
+                                        <connections>
+                                            <action selector="historyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ght-ud-lFs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

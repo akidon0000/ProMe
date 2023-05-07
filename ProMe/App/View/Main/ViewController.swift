@@ -9,7 +9,7 @@ import UIKit
 
 enum SituationType: String {
     case selfPromote = "自己PR"
-    case extracurricularActivities = "学生時代に力を入れたこと"
+    case extracurricularActivities = "ガクチカ"
 }
 
 enum AiModelType: String {
@@ -46,6 +46,13 @@ class ViewController: UIViewController {
         let vc = R.storyboard.chat.chatViewController()!
         present(vc, animated: true, completion: nil)
     }
+    
+    @IBAction func historyButton(_ sender: Any) {
+        let vc = R.storyboard.history.historyViewController()!
+        present(vc, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
