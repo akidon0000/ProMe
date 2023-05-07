@@ -1,0 +1,6 @@
+framework module Pods_ProMe {
+  umbrella header "Pods-ProMe-umbrella.h"
+
+  export *
+  module * { export * }
+}
