@@ -47,16 +47,16 @@ class ChatViewModel {
         guard let message = data.choices.first?.message else { return }
         add(text: message.content, role: .assistant)
         
-        dataManager.chatMessages.removeAll()
+        dataManager.messagesForGPT.removeAll()
         for message in messages {
             if message.role == .user {
                 let str = MockMessage.createMessage(text: message.content, user: .me)
 //                if dataManager.chatMessages.count != 0 {
-                    dataManager.chatMessages.append(str)
+                    dataManager.messagesForGPT.append(str)
 //                }
             }else{
                 let str = MockMessage.createMessage(text: message.content, user: .you)
-                dataManager.chatMessages.append(str)
+                dataManager.messagesForGPT.append(str)
             }
         }
         

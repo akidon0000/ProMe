@@ -52,7 +52,7 @@ struct MockMessage: MessageType {
 
     // サンプル用に適当なメッセージ
     static func getMessages() -> [MockMessage] {
-        return DataManager.singleton.chatMessages
+        return DataManager.singleton.messagesForGPT
     }
 
     static func createMessage(text: String, user: userType) -> MockMessage {

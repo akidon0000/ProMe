@@ -19,7 +19,6 @@ struct ChatGPTResponse: Codable {
         var index: Int
         var finish_reason: String
         var message: Message
-        //var messages: [Message]?
 
         struct Message: Codable {
             var role: String

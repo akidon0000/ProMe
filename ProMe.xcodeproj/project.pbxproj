@@ -21,7 +21,6 @@
 		1A1BD2A229FF52AB00268715 /* UIViewController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29929FF52AB00268715 /* UIViewController+StatusBar.swift */; };
 		1A1BD2A329FF52AB00268715 /* AKLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD29A29FF52AB00268715 /* AKLibrary.swift */; };
 		1A1BD2A829FF5E2700268715 /* ChatGPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD2A729FF5E2700268715 /* ChatGPTResponse.swift */; };
-		1A1BD2AA2A00E80400268715 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD2A92A00E80400268715 /* Entity.swift */; };
 		1A1BD2AC2A00E9C200268715 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD2AB2A00E9C200268715 /* Mock.swift */; };
 		1A1BD2AE2A00F80C00268715 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1BD2AD2A00F80C00268715 /* DataManager.swift */; };
 		1A1BD2B12A0140C200268715 /* prompt-self-promotion.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A1BD2B02A0140C200268715 /* prompt-self-promotion.txt */; };
@@ -33,8 +32,6 @@
 		1A75DB4329FF43AE007C0C68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A75DB4129FF43AE007C0C68 /* LaunchScreen.storyboard */; };
 		1A775D172A05FC31006B06C9 /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A775D152A05FC31006B06C9 /* InputTableViewCell.swift */; };
 		1A775D182A05FC31006B06C9 /* InputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A775D162A05FC31006B06C9 /* InputTableViewCell.xib */; };
-		1A775D1C2A05FE80006B06C9 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A775D1A2A05FE80006B06C9 /* TitleTableViewCell.swift */; };
-		1A775D1D2A05FE80006B06C9 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A775D1B2A05FE80006B06C9 /* TitleTableViewCell.xib */; };
 		1A775D1F2A060427006B06C9 /* MainTableViewCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A775D1E2A060427006B06C9 /* MainTableViewCellContent.swift */; };
 		1A775D212A06056E006B06C9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A775D202A06056E006B06C9 /* MainViewModel.swift */; };
 		1A775D242A06348A006B06C9 /* key.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A775D232A06348A006B06C9 /* key.plist */; };
@@ -56,7 +53,6 @@
 		1A1BD29929FF52AB00268715 /* UIViewController+StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBar.swift"; sourceTree = "<group>"; };
 		1A1BD29A29FF52AB00268715 /* AKLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKLibrary.swift; sourceTree = "<group>"; };
 		1A1BD2A729FF5E2700268715 /* ChatGPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTResponse.swift; sourceTree = "<group>"; };
-		1A1BD2A92A00E80400268715 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		1A1BD2AB2A00E9C200268715 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		1A1BD2AD2A00F80C00268715 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1A1BD2B02A0140C200268715 /* prompt-self-promotion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "prompt-self-promotion.txt"; sourceTree = "<group>"; };
@@ -70,8 +66,6 @@
 		1A75DB4429FF43AE007C0C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A775D152A05FC31006B06C9 /* InputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
 		1A775D162A05FC31006B06C9 /* InputTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputTableViewCell.xib; sourceTree = "<group>"; };
-		1A775D1A2A05FE80006B06C9 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
-		1A775D1B2A05FE80006B06C9 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		1A775D1E2A060427006B06C9 /* MainTableViewCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCellContent.swift; sourceTree = "<group>"; };
 		1A775D202A06056E006B06C9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1A775D232A06348A006B06C9 /* key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = key.plist; sourceTree = "<group>"; };
@@ -107,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				1A1BD2A729FF5E2700268715 /* ChatGPTResponse.swift */,
-				1A1BD2A92A00E80400268715 /* Entity.swift */,
 				1A1BD2AD2A00F80C00268715 /* DataManager.swift */,
 			);
 			path = Model;
@@ -138,12 +131,11 @@
 		1A1BD28029FF479F00268715 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				1A775D192A05FE6D006B06C9 /* Title */,
 				1A775D142A05FC04006B06C9 /* Input */,
 				1A75DB3A29FF43AC007C0C68 /* ViewController.swift */,
+				1A775D202A06056E006B06C9 /* MainViewModel.swift */,
 				1A75DB3C29FF43AC007C0C68 /* Main.storyboard */,
 				1A775D1E2A060427006B06C9 /* MainTableViewCellContent.swift */,
-				1A775D202A06056E006B06C9 /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -218,15 +210,6 @@
 				1A775D162A05FC31006B06C9 /* InputTableViewCell.xib */,
 			);
 			path = Input;
-			sourceTree = "<group>";
-		};
-		1A775D192A05FE6D006B06C9 /* Title */ = {
-			isa = PBXGroup;
-			children = (
-				1A775D1A2A05FE80006B06C9 /* TitleTableViewCell.swift */,
-				1A775D1B2A05FE80006B06C9 /* TitleTableViewCell.xib */,
-			);
-			path = Title;
 			sourceTree = "<group>";
 		};
 		1A775D222A06341E006B06C9 /* prompt */ = {
@@ -320,7 +303,6 @@
 				1A75DB4029FF43AE007C0C68 /* Assets.xcassets in Resources */,
 				1A1BD28529FF4B9800268715 /* Chat.storyboard in Resources */,
 				1A775D242A06348A006B06C9 /* key.plist in Resources */,
-				1A775D1D2A05FE80006B06C9 /* TitleTableViewCell.xib in Resources */,
 				1A775D182A05FC31006B06C9 /* InputTableViewCell.xib in Resources */,
 				1A75DB3E29FF43AC007C0C68 /* Main.storyboard in Resources */,
 			);
@@ -403,8 +385,6 @@
 				1A75DB3729FF43AC007C0C68 /* AppDelegate.swift in Sources */,
 				1A1BD28829FF4FF400268715 /* R.generated.swift in Sources */,
 				1A1BD2A029FF52AB00268715 /* DateFormatter.swift in Sources */,
-				1A775D1C2A05FE80006B06C9 /* TitleTableViewCell.swift in Sources */,
-				1A1BD2AA2A00E80400268715 /* Entity.swift in Sources */,
 				1A1BD29B29FF52AB00268715 /* Date.swift in Sources */,
 				1A1BD28329FF4B7900268715 /* ChatViewController.swift in Sources */,
 				1A775D172A05FC31006B06C9 /* InputTableViewCell.swift in Sources */,

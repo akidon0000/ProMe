@@ -12,44 +12,9 @@ import InputBarAccessoryView
 class ChatViewController: MessagesViewController {
     
     private let dataManager = DataManager.singleton
+    
     private let viewModel = ChatViewModel()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        messagesCollectionView.messagesDataSource = self
-        messagesCollectionView.messagesLayoutDelegate = self
-        messagesCollectionView.messagesDisplayDelegate = self
-        messagesCollectionView.messageCellDelegate = self
-        messageInputBar.delegate = self
-
-        setupInput()
-        setupButton()
-        // 背景の色を指定
-        messagesCollectionView.backgroundColor = .systemGray6
-
-        // メッセージ入力時に一番下までスクロール
-        scrollsToLastItemOnKeyboardBeginsEditing = true
-        maintainPositionOnKeyboardFrameChanged = true
-        
-        // Protocol： ViewModelが変化したことの通知を受けて画面を更新する
-        self.viewModel.checkGPTConnectivity = { [weak self] () in
-            guard let self = self else { fatalError() }
-            DispatchQueue.main.async {
-                // モックデータを取得
-                self.messageList = MockMessage.getMessages()
-            }
-        }
-        
-        guard let fileURL = Bundle.main.url(forResource: "prompt-self-promotion", withExtension: "txt"),
-              let fileContents = try? String(contentsOf: fileURL, encoding: .utf8) else {
-                  fatalError("読み込み出来ません")
-              }
-        let prompt = fileContents + dataManager.getMyInfo()
-//        dataManager.chatMessages.append(MockMessage.createMessage(text: fileContents, user: .me))
-        viewModel.askChatGPT(text: prompt)
-    }
-
     var messageList: [MockMessage] = [] {
         didSet {
             // messagesCollectionViewをリロード
@@ -65,10 +30,54 @@ class ChatViewController: MessagesViewController {
         formatter.locale = Locale(identifier: "ja_JP")
         return formatter
     }()
-
+    
+    // MARK: - View Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupDefaults()
+        setupDelegates()
+        setupInput()
+        setupButton()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Methods [Private]
+    
+    private func setupDefaults() {
+        // 背景の色を指定
+        messagesCollectionView.backgroundColor = .systemGray6
+
+        // メッセージ入力時に一番下までスクロール
+        scrollsToLastItemOnKeyboardBeginsEditing = true
+        maintainPositionOnKeyboardFrameChanged = true
+        // Protocol： ViewModelが変化したことの通知を受けて画面を更新する
+        self.viewModel.checkGPTConnectivity = { [weak self] () in
+            guard let self = self else { fatalError() }
+            DispatchQueue.main.async {
+                // モックデータを取得
+                self.messageList = MockMessage.getMessages()
+            }
+        }
+        
+        guard let fileURL = Bundle.main.url(forResource: "prompt-self-promotion", withExtension: "txt"),
+              let fileContents = try? String(contentsOf: fileURL, encoding: .utf8) else {
+                  fatalError("読み込み出来ません")
+              }
+        let prompt = fileContents + dataManager.fetchUserInfo()
+//        dataManager.chatMessages.append(MockMessage.createMessage(text: fileContents, user: .me))
+        viewModel.askChatGPT(text: prompt)
+    }
+    
+    private func setupDelegates() {
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
+        messagesCollectionView.messageCellDelegate = self
+        messageInputBar.delegate = self
     }
 
     private func setupInput(){
@@ -90,6 +99,7 @@ class ChatViewController: MessagesViewController {
 }
 
 // MARK: - MessagesDataSource
+
 extension ChatViewController: MessagesDataSource {
     func currentSender() -> SenderType {
         return userType.me.data
@@ -135,6 +145,7 @@ extension ChatViewController: MessagesDataSource {
 }
 
 // MARK: - MessagesDisplayDelegate
+
 extension ChatViewController: MessagesDisplayDelegate {
 
     // メッセージの色を変更
@@ -167,9 +178,9 @@ extension ChatViewController: MessagesDisplayDelegate {
     }
 }
 
-
 // 各ラベルの高さを設定（デフォルト0なので必須）
 // MARK: - MessagesLayoutDelegate
+
 extension ChatViewController: MessagesLayoutDelegate {
 
     func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
@@ -186,33 +197,34 @@ extension ChatViewController: MessagesLayoutDelegate {
 }
 
 // MARK: - MessageCellDelegate
+
 extension ChatViewController: MessageCellDelegate {
 
-    //MARK: - Cellのバックグラウンドをタップした時の処理
+    // Cellのバックグラウンドをタップした時の処理
     func didTapBackground(in cell: MessageCollectionViewCell) {
         print("バックグラウンドタップ")
         closeKeyboard()
     }
 
-    //MARK: - メッセージをタップした時の処理
+    // メッセージをタップした時の処理
     func didTapMessage(in cell: MessageCollectionViewCell) {
         print("メッセージタップ")
         closeKeyboard()
     }
 
-    //MARK: - アバターをタップした時の処理
+    // アバターをタップした時の処理
     func didTapAvatar(in cell: MessageCollectionViewCell) {
         print("アバタータップ")
         closeKeyboard()
     }
 
-    //MARK: - メッセージ上部をタップした時の処理
+    // メッセージ上部をタップした時の処理
     func didTapMessageTopLabel(in cell: MessageCollectionViewCell) {
         print("メッセージ上部タップ")
         closeKeyboard()
     }
 
-    //MARK: - メッセージ下部をタップした時の処理
+    // メッセージ下部をタップした時の処理
     func didTapMessageBottomLabel(in cell: MessageCollectionViewCell) {
         print("メッセージ下部タップ")
         closeKeyboard()
@@ -220,6 +232,7 @@ extension ChatViewController: MessageCellDelegate {
 }
 
 // MARK: - InputBarAccessoryViewDelegate
+
 extension ChatViewController: InputBarAccessoryViewDelegate {
     // 送信ボタンをタップした時の挙動
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
