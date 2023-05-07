@@ -15,6 +15,12 @@ class ChatViewController: MessagesViewController {
     
     private let viewModel = ChatViewModel()
     
+    private var isFirstLayout: Bool = true
+    
+    var navigationBarView: UIView!
+    
+    var backButton: UIButton!
+    
     var messageList: [MockMessage] = [] {
         didSet {
             // messagesCollectionViewをリロード
@@ -40,9 +46,18 @@ class ChatViewController: MessagesViewController {
         setupInput()
         setupButton()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupSubView()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func onClickMyButton(sender: UIButton) {
+        dismiss(animated: true)
     }
     
     // MARK: - Methods [Private]
@@ -79,8 +94,47 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messageCellDelegate = self
         messageInputBar.delegate = self
     }
+    
+    private func setupSubView() {
+        // Hack to prevent animation of the contentInset after viewDidAppear
+        if isFirstLayout {
+            defer { isFirstLayout = false }
+            // Viewを生成.
+            navigationBarView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.safeAreaInsets.top + 44))
+            navigationBarView.backgroundColor = UIColor.green
+            
+            // ボタンを生成.
+            backButton = UIButton(frame: CGRect(x: 5, y: self.view.safeAreaInsets.top+2, width: 60, height:40))
+            backButton.backgroundColor = UIColor.systemGray5
+            backButton.layer.cornerRadius = 20.0
+//            backButton.layer.position = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height-50)
+            backButton.setTitle("戻る", for: .normal)
+            backButton.setTitleColor(UIColor.black, for: .normal)
+            backButton.addTarget(self, action: #selector(ChatViewController.onClickMyButton(sender:)), for: .touchUpInside)
+            
+//            addKeyboardObservers()
+//            messageCollectionViewBottomInset = requiredInitialScrollViewBottomInset()
+        }
 
-    private func setupInput(){
+//        navigationBarView.isHidden = true
+        
+//        // ボタンを生成.
+//        backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+//        backButton.backgroundColor = UIColor.red
+//        backButton.layer.cornerRadius = 20.0
+//        backButton.layer.position = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height-50)
+//        backButton.setTitle("Appear", for: .normal)
+//        backButton.setTitleColor(UIColor.white, for: .normal)
+//        myButton.addTarget(self, action: #selector(ViewController.onClickMyButton(sender:)), for: .touchUpInside)
+        
+        // myViewをviewに追加.
+        self.view.addSubview(navigationBarView)
+        
+        // ボタンをviewに追加.
+        self.view.addSubview(backButton)
+    }
+    
+    private func setupInput() {
         // プレースホルダーの指定
         messageInputBar.inputTextView.placeholder = "Aa"
         // 入力欄のカーソルの色を指定
@@ -89,8 +143,8 @@ class ChatViewController: MessagesViewController {
         messageInputBar.inputTextView.backgroundColor = .systemGray6
         messageInputBar.inputTextView.cornerRound = 15.0
     }
-
-    private func setupButton(){
+    
+    private func setupButton() {
         // ボタンの変更
         messageInputBar.sendButton.title = "送信"
         // 送信ボタンの色を指定
@@ -104,7 +158,7 @@ extension ChatViewController: MessagesDataSource {
     func currentSender() -> SenderType {
         return userType.me.data
     }
-
+    
     func otherSender() -> SenderType {
         return userType.you.data
     }
