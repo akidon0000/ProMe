@@ -37,7 +37,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     // セクション内のセルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager.saveMessages?.count ?? 0
+        return dataManager.messageHistory?.count ?? 0
     }
     
     // セルの高さ
@@ -48,19 +48,18 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     // セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let inputCell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath ) as! HistoryTableViewCell
-        if let item = dataManager.saveMessages?[indexPath.row] {
-            inputCell.setupCell(contents: item.messages[0], date: item.date, type: item.situationType.rawValue)
+        if let item = dataManager.messageHistory?[indexPath.row] {
+            inputCell.setupCell(contents: item.text, date: item.date, type: item.situation.rawValue)
         }
         return inputCell
     }
     
     /// セルがタップされた時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let item = dataManager.saveMessages?[indexPath.row] {
+        if let item = dataManager.messageHistory?[indexPath.row] {
             dismiss(animated: true, completion: {
-                self.delegate.situationMenuType = item.situationType
-                self.delegate.messages = item.messages
-                self.delegate.tableView.reloadData()
+                self.delegate.situationMenuType = item.situation
+                self.delegate.contentsTextView.text = item.text
             })
         }
     }

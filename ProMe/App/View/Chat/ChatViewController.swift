@@ -82,9 +82,9 @@ class ChatViewController: MessagesViewController {
               let fileContents = try? String(contentsOf: fileURL, encoding: .utf8) else {
                   fatalError("読み込み出来ません")
               }
-        let prompt = fileContents + dataManager.fetchUserInfo()
+//        let prompt = fileContents + dataManager.messageHistory[dataManager.messageHistory?.count-1]
 //        dataManager.chatMessages.append(MockMessage.createMessage(text: fileContents, user: .me))
-        viewModel.askChatGPT(text: prompt)
+//        viewModel.askChatGPT(text: prompt)
     }
     
     private func setupDelegates() {
