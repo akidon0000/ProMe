@@ -60,6 +60,9 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
             dismiss(animated: true, completion: {
                 self.delegate.situationMenuType = item.situation
                 self.delegate.contentsTextView.text = item.text
+                self.delegate.contentsTextView.placeHolder = ""
+                self.delegate.situationButton.setTitle(item.situation.rawValue, for: .normal)
+                self.delegate.titleLabel.text = self.delegate.viewModel.titleLabel[item.situation]
             })
         }
     }

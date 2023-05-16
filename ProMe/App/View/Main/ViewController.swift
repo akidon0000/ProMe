@@ -30,7 +30,7 @@ final class ViewController: UIViewController {
     
     public var situationMenuType = SituationType.selfPromote
     
-    private let viewModel = MainViewModel()
+    public let viewModel = MainViewModel()
     
     // 共通データ・マネージャ
     private let dataManager = DataManager.singleton
