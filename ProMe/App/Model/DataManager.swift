@@ -29,8 +29,12 @@ final class DataManager {
             return lists
         }
         set(v){
+            var list = v!
+            if 10 < list.count {
+                list.remove(at: 0)
+            }
             let jsonEncoder = JSONEncoder()
-            guard let data = try? jsonEncoder.encode(v!) else { return }
+            guard let data = try? jsonEncoder.encode(list) else { return }
             userDefaults.set(data ,forKey: KEY_saveMessages)}
         }
     // GPTに送信する用
