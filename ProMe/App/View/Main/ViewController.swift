@@ -21,15 +21,16 @@ final class ViewController: UIViewController {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var situationButton: UIButton!
     @IBOutlet weak var aiModelButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentsTextView: PlaceTextView!
     
     public var messages:[String]?
     
     public var situationMenuType = SituationType.selfPromote
     
-    private let viewModel = MainViewModel()
+    public let viewModel = MainViewModel()
     
     // 共通データ・マネージャ
     private let dataManager = DataManager.singleton
@@ -39,29 +40,21 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDefaults()
-        setupDelegate()
     }
     
     // 文章作成開始
     @IBAction func startButton(_ sender: Any) {
-        var lists:[String] = []
-        for i in 0..<dataManager.textGenerationUserInfo.count {
-            
-            lists.append(dataManager.textGenerationUserInfo.value(at: i) ?? "xx")
-        }
-        
         let dt = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.setTemplate(.full)
-        print(dateFormatter.string(from: dt))
         
-        let saveMessage = DataManager.SaveMessage(situationType: self.situationMenuType,
-                                                  messages: lists,
-                                                  date: dateFormatter.string(from: dt))
-        if dataManager.saveMessages == nil {
-            dataManager.saveMessages = [saveMessage]
+        let list = DataManager.MessageData(situation: self.situationMenuType,
+                                                             text: contentsTextView.text,
+                                                             date: dateFormatter.string(from: dt))
+        if let messageHistory = dataManager.messageHistory {
+            dataManager.messageHistory = messageHistory + [list]
         }else{
-            dataManager.saveMessages!.append(saveMessage)
+            dataManager.messageHistory = [list]
         }
         let vc = R.storyboard.chat.chatViewController()!
         present(vc, animated: true, completion: nil)
@@ -76,12 +69,8 @@ final class ViewController: UIViewController {
     private func setupDefaults() {
         configureSituationMenuButton()
         configureAiModelMenuButton()
-        tableView.register(R.nib.inputTableViewCell)
-    }
-    
-    private func setupDelegate() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        titleLabel.text = viewModel.titleLabel[self.situationMenuType]
+        contentsTextView.placeHolder = viewModel.placeHolderContents[self.situationMenuType]!
     }
     
     private func configureSituationMenuButton() {
@@ -106,7 +95,8 @@ final class ViewController: UIViewController {
         // ボタンの表示を変更
         situationButton.setTitle(self.situationMenuType.rawValue, for: .normal)
         
-        tableView.reloadData()
+        titleLabel.text = viewModel.titleLabel[self.situationMenuType]
+        contentsTextView.placeHolder = viewModel.placeHolderContents[self.situationMenuType]!
     }
     
     private func configureAiModelMenuButton() {
@@ -134,35 +124,4 @@ final class ViewController: UIViewController {
         aiModelButton.setTitle(self.aiModelMenuType.rawValue, for: .normal)
     }
     
-}
-
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.contentsSelfPromotion[self.situationMenuType]!.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let inputCell = tableView.dequeueReusableCell(withIdentifier: "InputTableViewCell", for: indexPath ) as! InputTableViewCell
-//        guard let message = messages?[Int(indexPath.row)] else{
-//            return
-//        }
-//        let txt = messages!
-        inputCell.setupCell(title: viewModel.contentsSelfPromotion[self.situationMenuType]![Int(indexPath.row)],
-                            contents: messages?[Int(indexPath.row)] ?? "")
-        return inputCell
-    }
-    
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        // タップ無効
-        return nil
-    }
 }

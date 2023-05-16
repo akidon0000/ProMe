@@ -26,7 +26,7 @@ class InputTableViewCell: UITableViewCell {
 
 extension InputTableViewCell: UITextViewDelegate {
     // 打ち込まれた内容を常に保存する
-    func textViewDidChange(_ textView: UITextView) {
-        dataManager.textGenerationUserInfo[ID] = textView.text
-    }
+//    func textViewDidChange(_ textView: UITextView) {
+////        dataManager.textGenerationUserInfo[ID] = textView.text
+//    }
 }
