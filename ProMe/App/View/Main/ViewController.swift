@@ -17,30 +17,29 @@ enum AiModelType: String {
     case four = "GPT4"
 }
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
+    
+    // MARK: - IBOutlet
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var situationButton: UIButton!
     @IBOutlet weak var aiModelButton: UIButton!
     
-    private let dataManager = DataManager.singleton
-    private let viewModel = MainViewModel()
+    public var messages:[String]?
     
     public var situationMenuType = SituationType.selfPromote
-    private var aiModelMenuType = AiModelType.threePointFiveTurbo
     
-    var messages:[String]?
+    private let viewModel = MainViewModel()
+    
+    // 共通データ・マネージャ
+    private let dataManager = DataManager.singleton
+    
+    private var aiModelMenuType = AiModelType.threePointFiveTurbo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // プルダウンメニュー初期設定
-        self.configureSituationMenuButton()
-        self.configureAiModelMenuButton()
-        
-        tableView.register(UINib(nibName: "InputTableViewCell", bundle: nil), forCellReuseIdentifier: "InputTableViewCell")
-        tableView.dataSource = self
-        tableView.delegate = self
+        setupDefaults()
+        setupDelegate()
     }
     
     // 文章作成開始
@@ -74,45 +73,17 @@ class ViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
-    
-}
-
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    // セクションの数
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    private func setupDefaults() {
+        configureSituationMenuButton()
+        configureAiModelMenuButton()
+        tableView.register(R.nib.inputTableViewCell)
     }
     
-    // セクション内のセルの数
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.contentsSelfPromotion[self.situationMenuType]!.count
+    private func setupDelegate() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
-    // セルの高さ
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
-    // セルの内容
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let inputCell = tableView.dequeueReusableCell(withIdentifier: "InputTableViewCell", for: indexPath ) as! InputTableViewCell
-        guard let message = messages?[Int(indexPath.row)] {
-            
-        }
-        let txt = messages
-        inputCell.setupCell(title: viewModel.contentsSelfPromotion[self.situationMenuType]![Int(indexPath.row)],
-                            contents: messages?[Int(indexPath.row)] ?? "")
-        return inputCell
-    }
-    
-    // タップ無効
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
-    }
-}
-
-extension ViewController {
     private func configureSituationMenuButton() {
         var actions = [UIMenuElement]()
         actions.append(UIAction(title: SituationType.selfPromote.rawValue, image: nil, state: self.situationMenuType == SituationType.selfPromote ? .on : .off,
@@ -161,5 +132,37 @@ extension ViewController {
         aiModelButton.showsMenuAsPrimaryAction = true
         // ボタンの表示を変更
         aiModelButton.setTitle(self.aiModelMenuType.rawValue, for: .normal)
+    }
+    
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.contentsSelfPromotion[self.situationMenuType]!.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let inputCell = tableView.dequeueReusableCell(withIdentifier: "InputTableViewCell", for: indexPath ) as! InputTableViewCell
+//        guard let message = messages?[Int(indexPath.row)] else{
+//            return
+//        }
+//        let txt = messages!
+        inputCell.setupCell(title: viewModel.contentsSelfPromotion[self.situationMenuType]![Int(indexPath.row)],
+                            contents: messages?[Int(indexPath.row)] ?? "")
+        return inputCell
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        // タップ無効
+        return nil
     }
 }
