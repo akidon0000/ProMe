@@ -30,40 +30,40 @@ class HistoryViewController: UIViewController {
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
-    // セクションの数
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    // セクション内のセルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataManager.messageHistory?.count ?? 0
     }
     
-    // セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-    // セルの内容
+    /// messageHistoryは配列順序を反転して出力する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let inputCell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath ) as! HistoryTableViewCell
-        if let item = dataManager.messageHistory?[indexPath.row] {
-            inputCell.setupCell(contents: item.text, date: item.date, type: item.situation.rawValue)
+        guard let messageHistory = dataManager.messageHistory else{
+            return inputCell
         }
+        let item = messageHistory.reversed()[indexPath.row]
+        inputCell.setupCell(contents: item.text, date: item.date, type: item.situation.rawValue)
         return inputCell
     }
     
-    /// セルがタップされた時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let item = dataManager.messageHistory?[indexPath.row] {
-            dismiss(animated: true, completion: {
-                self.delegate.situationMenuType = item.situation
-                self.delegate.contentsTextView.text = item.text
-                self.delegate.contentsTextView.placeHolder = ""
-                self.delegate.situationButton.setTitle(item.situation.rawValue, for: .normal)
-                self.delegate.titleLabel.text = self.delegate.viewModel.titleLabel[item.situation]
-            })
+        guard let messageHistory = dataManager.messageHistory else{
+            return
         }
+        let item = messageHistory.reversed()[indexPath.row]
+        dismiss(animated: true, completion: {
+            self.delegate.situationMenuType = item.situation
+            self.delegate.contentsTextView.text = item.text
+            self.delegate.contentsTextView.placeHolder = ""
+            self.delegate.situationButton.setTitle(item.situation.rawValue, for: .normal)
+            self.delegate.titleLabel.text = self.delegate.viewModel.titleLabel[item.situation]
+        })
     }
 }
