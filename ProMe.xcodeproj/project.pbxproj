@@ -119,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				1A1BD29029FF52AB00268715 /* AKLibrary */,
-				1A1BD27C29FF475200268715 /* Model */,
 				1A1BD27F29FF476F00268715 /* etc */,
+				1A1BD27C29FF475200268715 /* Model */,
 				1A1BD27E29FF476800268715 /* View */,
 			);
 			path = App;

@@ -35,14 +35,25 @@ final class DataManager {
             }
             let jsonEncoder = JSONEncoder()
             guard let data = try? jsonEncoder.encode(list) else { return }
-            userDefaults.set(data ,forKey: KEY_saveMessages)}
+            userDefaults.set(data ,forKey: KEY_saveMessages)
         }
+    }
     // GPTに送信する用
     public var messagesForGPT: [MockMessage] = []
+    
+    
+    public var firstMessage: String {
+        get{
+            guard let message = messageHistory else{
+                return ""
+            }
+            return message.reversed()[0].text
+        }
     }
-    
-    
-    
+}
+
+
+
 //    // GPTに送信する用
 //    public var messagesForGPT: [MockMessage] = []
 //
